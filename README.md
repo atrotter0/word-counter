@@ -16,7 +16,7 @@ A class that counts how many times a specific word appears in a string of words.
 | Program only checks for a valid word (only accepts letters in words). | %$DHOG&* | false | Included special characters in the word so that the method would return false, marking the word as invalid. |
 | Program downcases words in the phrase to find exact word matches. | This is the end, the END my friend. | This is the end, the end my friend. | In order to find an exact word match, I need to downcase all words to match user input. |
 | Program strips punctuation from each word in the phrase. | this is the end, the end my friend. | this is the end the end my friend | In order to find an exact word match, I need to remove punctuation from the phrase because 'end,' has a different value than 'end'. |
-| Program counts how many times the specified word is found within the inputted phrase. | Word: Goblins  Phrase: The goblins are everywhere! Don't let the goblins surround us! | 2 | Included two cases of the inputted word in the phrase to check that the program correctly detects duplicate words. |
+| Program counts how many times the specified word is found within the inputted phrase. | Word: Goblins  Phrase: the goblins are everywhere dont let the goblins surround us | 2 | Included two cases of the inputted word in the phrase to check that the program correctly detects duplicate words. |
 
 ## Setup on OSX
 
