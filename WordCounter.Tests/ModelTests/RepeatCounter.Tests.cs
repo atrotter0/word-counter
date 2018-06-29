@@ -51,5 +51,13 @@ namespace WordCounter.Tests
             string expectedOutput = "this is the end, the end my friend.";
             Assert.AreEqual(expectedOutput, newCounter.GetUserPhrase());
         }
+
+        [TestMethod]
+        public void StripPunctuation_RemovesPunctuationFromString_String()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.StripPunctuation("How !does ??this thing work?!");
+            Assert.AreEqual("How does this thing work", newCounter.GetUserPhrase());
+        }
     }
 }

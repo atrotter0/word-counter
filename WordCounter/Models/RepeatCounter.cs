@@ -47,5 +47,17 @@ namespace WordCounter
             string lowercasePhrase = string.Join(" ", words);
             this.SetUserPhrase(lowercasePhrase);
         }
+
+        public void StripPunctuation(string phrase)
+        {
+            char[] letters = phrase.ToCharArray();
+            List<char> notPunctation = new List<char>() {};
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (!Char.IsPunctuation(letters[i])) notPunctation.Add(letters[i]);
+            }
+            string strippedPhrase = string.Join("", notPunctation);
+            this.SetUserPhrase(strippedPhrase);
+        }
     }
 }
