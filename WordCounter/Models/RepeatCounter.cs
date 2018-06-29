@@ -8,6 +8,7 @@ namespace WordCounter
         private string _userWord;
         private string _userPhrase;
         private string _scrubbedPhrase;
+        private int _wordCount;
 
         public void SetUserWord(string word)
         {
@@ -37,6 +38,16 @@ namespace WordCounter
         public string GetScrubbedPhrase()
         {
             return _scrubbedPhrase;
+        }
+
+        public int GetWordCount()
+        {
+            return _wordCount;
+        }
+
+        public void IncrementWordCount()
+        {
+            _wordCount++;
         }
 
         public bool IsValidWord(string word)
@@ -70,5 +81,13 @@ namespace WordCounter
             string scrubbedPhrase = string.Join("", notPunctation);
             return scrubbedPhrase;
         }
+
+        // public bool FindWordMatches()
+        // {
+        //     for (int i = 0; i < this.GetScrubbedPhrase().Length; i++)
+        //     {
+
+        //     }
+        // }
     }
 }

@@ -34,6 +34,14 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void GetIncrementWordCount_GetsAndIncrementsWordCount_Int()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.IncrementWordCount();
+            Assert.AreEqual(1, newCounter.GetWordCount());
+        }
+
+        [TestMethod]
         public void IsValidWord_ChecksWordForInvalidCharacters_False()
         {
             RepeatCounter newCounter = new RepeatCounter();
@@ -68,5 +76,12 @@ namespace WordCounter.Tests
             string stripped = "This is the end the end my friend";
             Assert.AreEqual(stripped, newCounter.ScrubPunctuation(phraseWithPunctuation));
         }
+
+        // [TestMethod]
+        // public void FindWordMatches_CountsUserWordInPhrase_True()
+        // {
+        //     RepeatCounter newCounter = new RepeatCounter();
+        //     Assert.AreEqual(true, newCounter.FindWordMatches());
+        // }
     }
 }
