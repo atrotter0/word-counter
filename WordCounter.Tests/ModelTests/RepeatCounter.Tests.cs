@@ -15,5 +15,21 @@ namespace WordCounter.Tests
             newCounter.SetUserWord("DOG");
             Assert.AreEqual("dog", newCounter.GetUserWord());
         }
+
+        [TestMethod]
+        public void IsValidWord_ChecksWordForInvalidCharacters_False()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string input = "%$DHOG&*";
+            Assert.AreEqual(false, newCounter.IsValidWord(input));
+        }
+
+        [TestMethod]
+        public void IsValidWord_ChecksWordForInvalidCharacters_True()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string input = "cat";
+            Assert.AreEqual(true, newCounter.IsValidWord(input));
+        }
     }
 }

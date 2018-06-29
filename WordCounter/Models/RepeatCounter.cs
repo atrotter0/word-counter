@@ -16,5 +16,14 @@ namespace WordCounter
         {
             return _userWord;
         }
+
+        public bool IsValidWord(string word)
+        {
+            foreach (char letter in word)
+            {
+                if (!Char.IsLetter(letter)) return false;
+            }
+            return true;
+        }
     }
 }
