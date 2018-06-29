@@ -10,13 +10,13 @@ A class that counts how many times a specific word appears in a string of words.
 
 ## Specs
 
-| Behavior | Input | Output |
-|----------|-------|--------|
-| Program downcases user input. | Dog | dog |
-| Program only allows letters in words. | Dog@#$ | Please enter a valid word. Only letters are allowed. |
-| Program downcases words in the phrase to find exact word matches. | This is going to get CRAZY! | this is going to get crazy! |
-| Program strips punctuation from each word in the phrase. | this is going to get crazy!!! | this is going to get crazy |
-| Program counts how many times the specified word is found within the inputted phrase. | Word: Dog  Phrase: That was a giant dog we saw the other day! | 1 |
+| Behavior | Input | Output | Reason |
+|----------|-------|--------|--------|
+| Program downcases user input. | Dog | dog | Included an uppercase letter in the word to make sure that the input is downcased. |
+| Program only checks for a valid word (only accepts letters in words). | %$DHOG&* | false | Included special characters in the word so that the method would return false, marking the word as invalid. |
+| Program downcases words in the phrase to find exact word matches. | This is the end, the END my friend. | This is the end, the end my friend. | In order to find an exact word match, I need to downcase all words to match user input. |
+| Program strips punctuation from each word in the phrase. | this is the end, the end my friend. | this is the end the end my friend | In order to find an exact word match, I need to remove punctuation from the phrase because 'end,' has a different value than 'end'. |
+| Program counts how many times the specified word is found within the inputted phrase. | Word: Goblins  Phrase: The goblins are everywhere! Don't let the goblins surround us! | 2 | Included two cases of the inputted word in the phrase to check that the program correctly detects duplicate words. |
 
 ## Setup on OSX
 
