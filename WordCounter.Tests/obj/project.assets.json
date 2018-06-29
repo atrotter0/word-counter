@@ -8490,11 +8490,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter.Tests/WordCounter.Tests.csproj",
+      "projectUniqueName": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter.Tests/WordCounter.Tests.csproj",
       "projectName": "WordCounter.Tests",
-      "projectPath": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter.Tests/WordCounter.Tests.csproj",
+      "projectPath": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter.Tests/WordCounter.Tests.csproj",
       "packagesPath": "/Users/abeltrotter/.nuget/packages/",
-      "outputPath": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter.Tests/obj/",
+      "outputPath": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/abeltrotter/.nuget/NuGet/NuGet.Config"
@@ -8508,8 +8508,8 @@
       "frameworks": {
         "netcoreapp1.1": {
           "projectReferences": {
-            "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj": {
-              "projectPath": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj"
+            "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter/WordCounter.csproj": {
+              "projectPath": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter/WordCounter.csproj"
             }
           }
         }

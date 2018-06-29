@@ -7042,11 +7042,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj",
+      "projectUniqueName": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter/WordCounter.csproj",
       "projectName": "WordCounter",
-      "projectPath": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter/WordCounter.csproj",
+      "projectPath": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter/WordCounter.csproj",
       "packagesPath": "/Users/abeltrotter/.nuget/packages/",
-      "outputPath": "/Users/abeltrotter/Desktop/WordCounter.Solution/WordCounter/obj/",
+      "outputPath": "/Users/abeltrotter/Documents/git/epicodus/c-sharp/WordCounter.Solution/WordCounter/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/abeltrotter/.nuget/NuGet/NuGet.Config"
