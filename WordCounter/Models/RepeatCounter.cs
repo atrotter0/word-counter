@@ -7,6 +7,7 @@ namespace WordCounter
     {
         private string _userWord;
         private string _userPhrase;
+        private string _scrubbedPhrase;
 
         public void SetUserWord(string word)
         {
@@ -16,15 +17,6 @@ namespace WordCounter
         public string GetUserWord()
         {
             return _userWord;
-        }
-
-        public bool IsValidWord(string word)
-        {
-            foreach (char letter in word)
-            {
-                if (!Char.IsLetter(letter)) return false;
-            }
-            return true;
         }
 
         public void SetUserPhrase(string phrase)
@@ -37,18 +29,37 @@ namespace WordCounter
             return _userPhrase;
         }
 
-        public void DowncasePhrase()
+        public void SetScrubbedPhrase(string phrase)
+        {
+            _scrubbedPhrase = phrase;
+        }
+
+        public string GetScrubbedPhrase()
+        {
+            return _scrubbedPhrase;
+        }
+
+        public bool IsValidWord(string word)
+        {
+            foreach (char letter in word)
+            {
+                if (!Char.IsLetter(letter)) return false;
+            }
+            return true;
+        }
+
+        public void DowncaseAndScrubPhrase()
         {
             string[] words = this.GetUserPhrase().Split(' ');
             for (int i = 0; i < words.Length; i++)
             {
-                words[i] = words[i].ToLower();
+                words[i] = this.ScrubPunctuation(words[i].ToLower());
             }
             string lowercasePhrase = string.Join(" ", words);
-            this.SetUserPhrase(lowercasePhrase);
+            this.SetScrubbedPhrase(lowercasePhrase);
         }
 
-        public void StripPunctuation(string phrase)
+        public string ScrubPunctuation(string phrase)
         {
             char[] letters = phrase.ToCharArray();
             List<char> notPunctation = new List<char>() {};
@@ -56,8 +67,8 @@ namespace WordCounter
             {
                 if (!Char.IsPunctuation(letters[i])) notPunctation.Add(letters[i]);
             }
-            string strippedPhrase = string.Join("", notPunctation);
-            this.SetUserPhrase(strippedPhrase);
+            string scrubbedPhrase = string.Join("", notPunctation);
+            return scrubbedPhrase;
         }
     }
 }

@@ -17,6 +17,23 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void GetSetUserPhrase_GetsSetsUserPhrase_String()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string phrase = "This is the end, the end my friend.";
+            newCounter.SetUserPhrase(phrase);
+            Assert.AreEqual(phrase, newCounter.GetUserPhrase());
+        }
+
+        [TestMethod]
+        public void GetSetScrubbedPhrase_GetsSetsScrubbedPhrase_String()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.SetScrubbedPhrase("this is the end the end my friend");
+            Assert.AreEqual("this is the end the end my friend", newCounter.GetScrubbedPhrase());
+        }
+
+        [TestMethod]
         public void IsValidWord_ChecksWordForInvalidCharacters_False()
         {
             RepeatCounter newCounter = new RepeatCounter();
@@ -33,31 +50,23 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
-        public void GetSetUserPhrase_GetsSetsUserPhrase_String()
-        {
-            RepeatCounter newCounter = new RepeatCounter();
-            string phrase = "This is the end, the end my friend.";
-            newCounter.SetUserPhrase(phrase);
-            Assert.AreEqual(phrase, newCounter.GetUserPhrase());
-        }
-
-        [TestMethod]
-        public void DowncasePhrase_DowncasesUserPhrase_True()
+        public void DowncaseAndScrubPhrase_DowncasesUserPhrase_True()
         {
             RepeatCounter newCounter = new RepeatCounter();
             string phrase = "This is the end, the END my friend.";
             newCounter.SetUserPhrase(phrase);
-            newCounter.DowncasePhrase();
-            string expectedOutput = "this is the end, the end my friend.";
-            Assert.AreEqual(expectedOutput, newCounter.GetUserPhrase());
+            newCounter.DowncaseAndScrubPhrase();
+            string expectedOutput = "this is the end the end my friend";
+            Assert.AreEqual(expectedOutput, newCounter.GetScrubbedPhrase());
         }
 
         [TestMethod]
-        public void StripPunctuation_RemovesPunctuationFromString_String()
+        public void ScrubPunctuation_RemovesPunctuationFromString_String()
         {
             RepeatCounter newCounter = new RepeatCounter();
-            newCounter.StripPunctuation("How !does ??this thing work?!");
-            Assert.AreEqual("How does this thing work", newCounter.GetUserPhrase());
+            string phraseWithPunctuation = "This is the end, the end my friend!";
+            string stripped = "This is the end the end my friend";
+            Assert.AreEqual(stripped, newCounter.ScrubPunctuation(phraseWithPunctuation));
         }
     }
 }
