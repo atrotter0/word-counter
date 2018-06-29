@@ -88,6 +88,21 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void AddLettersAndSpaces_AddsLettersAndSpacesToList_CharList()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            List<char> expectedLetterList = new List<char>() { 'a' };
+            List<char> testLetterList = new List<char>() {};
+            List<char> expectedSpaceList = new List<char>() { ' ' };
+            List<char> testSpaceList = new List<char>() {};
+
+            newCounter.AddLettersAndSpaces('a', testLetterList);
+            newCounter.AddLettersAndSpaces(' ', testSpaceList);
+            CollectionAssert.AreEqual(expectedLetterList, testLetterList);
+            CollectionAssert.AreEqual(expectedSpaceList, testSpaceList);
+        }
+
+        [TestMethod]
         public void FindWordMatches_CountsUserWordInPhrase_Int()
         {
             RepeatCounter newCounter = new RepeatCounter();

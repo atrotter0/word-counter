@@ -60,6 +60,10 @@ namespace WordCounter
             this.SetWordCount(0);
         }
 
+        // check for null input
+
+        // trim whitespace around word
+
         public bool IsValidWord(string word)
         {
             foreach (char letter in word)
@@ -83,13 +87,18 @@ namespace WordCounter
         public string ScrubPunctuation(string phrase)
         {
             char[] letters = phrase.ToCharArray();
-            List<char> onlyLettersAndSpaces = new List<char>() {};
+            List<char> lettersAndSpaces = new List<char>() {};
             foreach (char letter in letters)
             {
-                if (Char.IsLetter(letter) || Char.IsWhiteSpace(letter)) onlyLettersAndSpaces.Add(letter);
+                this.AddLettersAndSpaces(letter, lettersAndSpaces);
             }
-            string scrubbedWord = string.Join("", onlyLettersAndSpaces);
+            string scrubbedWord = string.Join("", lettersAndSpaces);
             return scrubbedWord;
+        }
+
+        public void AddLettersAndSpaces(char letter, List<char> lettersAndSpaces)
+        {
+            if (Char.IsLetter(letter) || Char.IsWhiteSpace(letter)) lettersAndSpaces.Add(letter);
         }
 
         public int FindWordMatches()
@@ -98,6 +107,7 @@ namespace WordCounter
             string [] words = this.GetScrubbedPhrase().Split(' ');
             foreach (string word in words)
             {
+                // extract this to a method
                 if (this.GetUserWord() == word) this.IncrementWordCount();
             }
             return this.GetWordCount();
