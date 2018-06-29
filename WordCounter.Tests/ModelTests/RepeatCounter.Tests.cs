@@ -52,6 +52,14 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void IsNullWord_ChecksForNullInput_True()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string word = null;
+            Assert.AreEqual(true, newCounter.IsNullWord(word));
+        }
+
+        [TestMethod]
         public void IsValidWord_ChecksWordForInvalidCharacters_False()
         {
             RepeatCounter newCounter = new RepeatCounter();

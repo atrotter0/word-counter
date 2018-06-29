@@ -60,7 +60,11 @@ namespace WordCounter
             this.SetWordCount(0);
         }
 
-        // check for null input
+        public bool IsNullWord(string word)
+        {
+            if (string.IsNullOrEmpty(word)) return true;
+            return false;
+        }
 
         // trim whitespace around word
 
