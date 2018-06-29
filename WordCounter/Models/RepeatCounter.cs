@@ -88,8 +88,8 @@ namespace WordCounter
             {
                 if (!Char.IsPunctuation(letters[i])) notPunctation.Add(letters[i]);
             }
-            string scrubbedPhrase = string.Join("", notPunctation);
-            return scrubbedPhrase;
+            string scrubbedWord = string.Join("", notPunctation);
+            return scrubbedWord;
         }
 
         public int FindWordMatches()
