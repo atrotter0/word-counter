@@ -9,10 +9,11 @@ namespace WordCounter.Tests
     public class RepeatCounterTest
     {
         [TestMethod]
-        public void DoIPass_TestToSeeIfThisWorks_True()
+        public void GetSetUserWord_GetsSetsUserWord_True()
         {
-            RepeatCounter newObject = new RepeatCounter();
-            Assert.AreEqual(true, newObject.DoIPass());
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.SetUserWord("dog");
+            Assert.AreEqual("dog", newCounter.GetUserWord());
         }
     }
 }

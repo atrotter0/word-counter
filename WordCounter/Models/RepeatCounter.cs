@@ -5,9 +5,16 @@ namespace WordCounter
 {
     public class RepeatCounter
     {
-        public bool DoIPass()
+        private string _userWord;
+
+        public void SetUserWord(string word)
         {
-            return true;
+            _userWord = word;
+        }
+
+        public string GetUserWord()
+        {
+            return _userWord;
         }
     }
 }
