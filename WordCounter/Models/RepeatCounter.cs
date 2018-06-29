@@ -83,12 +83,12 @@ namespace WordCounter
         public string ScrubPunctuation(string phrase)
         {
             char[] letters = phrase.ToCharArray();
-            List<char> onlyLetters = new List<char>() {};
+            List<char> onlyLettersAndSpaces = new List<char>() {};
             foreach (char letter in letters)
             {
-                if (Char.IsLetter(letter) || Char.IsWhiteSpace(letter)) onlyLetters.Add(letter);
+                if (Char.IsLetter(letter) || Char.IsWhiteSpace(letter)) onlyLettersAndSpaces.Add(letter);
             }
-            string scrubbedWord = string.Join("", onlyLetters);
+            string scrubbedWord = string.Join("", onlyLettersAndSpaces);
             return scrubbedWord;
         }
 
