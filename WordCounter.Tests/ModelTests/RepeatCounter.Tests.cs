@@ -77,11 +77,14 @@ namespace WordCounter.Tests
             Assert.AreEqual(stripped, newCounter.ScrubPunctuation(phraseWithPunctuation));
         }
 
-        // [TestMethod]
-        // public void FindWordMatches_CountsUserWordInPhrase_True()
-        // {
-        //     RepeatCounter newCounter = new RepeatCounter();
-        //     Assert.AreEqual(true, newCounter.FindWordMatches());
-        // }
+        [TestMethod]
+        public void FindWordMatches_CountsUserWordInPhrase_Int()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.SetUserWord("goblins");
+            newCounter.SetScrubbedPhrase("the goblins are everywhere dont get surrounded by the goblins");
+            newCounter.FindWordMatches();
+            Assert.AreEqual(2, newCounter.GetWordCount());
+        }
     }
 }

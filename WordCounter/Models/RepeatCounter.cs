@@ -82,12 +82,15 @@ namespace WordCounter
             return scrubbedPhrase;
         }
 
-        // public bool FindWordMatches()
-        // {
-        //     for (int i = 0; i < this.GetScrubbedPhrase().Length; i++)
-        //     {
-
-        //     }
-        // }
+        public int FindWordMatches()
+        {
+            //this.ResetWordCounter();
+            string [] phrase = this.GetScrubbedPhrase().Split(' ');
+            for (int i = 0; i < phrase.Length; i++)
+            {
+                if (this.GetUserWord() == phrase[i]) this.IncrementWordCount();
+            }
+            return this.GetWordCount();
+        }
     }
 }
