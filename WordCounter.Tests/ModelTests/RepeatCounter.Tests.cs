@@ -42,6 +42,16 @@ namespace WordCounter.Tests
         }
 
         [TestMethod]
+        public void ResetWordCount_ResetsWordCount_Int()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            newCounter.IncrementWordCount();
+            newCounter.IncrementWordCount();
+            newCounter.ResetWordCount();
+            Assert.AreEqual(0, newCounter.GetWordCount());
+        }
+
+        [TestMethod]
         public void IsValidWord_ChecksWordForInvalidCharacters_False()
         {
             RepeatCounter newCounter = new RepeatCounter();

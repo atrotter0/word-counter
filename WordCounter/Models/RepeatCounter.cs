@@ -45,9 +45,19 @@ namespace WordCounter
             return _wordCount;
         }
 
+        public void SetWordCount(int number)
+        {
+            _wordCount = number;
+        }
+
         public void IncrementWordCount()
         {
             _wordCount++;
+        }
+
+        public void ResetWordCount()
+        {
+            this.SetWordCount(0);
         }
 
         public bool IsValidWord(string word)
@@ -84,7 +94,7 @@ namespace WordCounter
 
         public int FindWordMatches()
         {
-            //this.ResetWordCounter();
+            this.ResetWordCount();
             string [] phrase = this.GetScrubbedPhrase().Split(' ');
             for (int i = 0; i < phrase.Length; i++)
             {
