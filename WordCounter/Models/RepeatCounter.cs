@@ -107,10 +107,14 @@ namespace WordCounter
             string [] words = this.GetScrubbedPhrase().Split(' ');
             foreach (string word in words)
             {
-                // extract this to a method
-                if (this.GetUserWord() == word) this.IncrementWordCount();
+                this.IncrementIfWordMatch(word);
             }
             return this.GetWordCount();
+        }
+
+        public void IncrementIfWordMatch(string word)
+        {
+            if (this.GetUserWord() == word) this.IncrementWordCount();
         }
     }
 }

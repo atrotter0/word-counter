@@ -111,5 +111,15 @@ namespace WordCounter.Tests
             newCounter.FindWordMatches();
             Assert.AreEqual(2, newCounter.GetWordCount());
         }
+
+        [TestMethod]
+        public void IncrementIfWordMatch_ChecksIfWordMatchesWordsInPhrase_True()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string word = "elf";
+            newCounter.SetUserWord("elf");
+            newCounter.IncrementIfWordMatch(word);
+            Assert.AreEqual(1, newCounter.GetWordCount());
+        }
     }
 }
