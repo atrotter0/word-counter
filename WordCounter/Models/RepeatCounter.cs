@@ -36,5 +36,16 @@ namespace WordCounter
         {
             return _userPhrase;
         }
+
+        public void DowncasePhrase()
+        {
+            string[] words = this.GetUserPhrase().Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                words[i] = words[i].ToLower();
+            }
+            string lowercasePhrase = string.Join(" ", words);
+            this.SetUserPhrase(lowercasePhrase);
+        }
     }
 }

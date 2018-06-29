@@ -40,5 +40,16 @@ namespace WordCounter.Tests
             newCounter.SetUserPhrase(phrase);
             Assert.AreEqual(phrase, newCounter.GetUserPhrase());
         }
+
+        [TestMethod]
+        public void DowncasePhrase_DowncasesUserPhrase_True()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string phrase = "This is the end, the END my friend.";
+            newCounter.SetUserPhrase(phrase);
+            newCounter.DowncasePhrase();
+            string expectedOutput = "this is the end, the end my friend.";
+            Assert.AreEqual(expectedOutput, newCounter.GetUserPhrase());
+        }
     }
 }
