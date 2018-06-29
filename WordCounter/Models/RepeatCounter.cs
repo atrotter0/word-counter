@@ -76,8 +76,8 @@ namespace WordCounter
             {
                 words[i] = this.ScrubPunctuation(words[i].ToLower());
             }
-            string lowercasePhrase = string.Join(" ", words);
-            this.SetScrubbedPhrase(lowercasePhrase);
+            string lowercaseAndScrubbed = string.Join(" ", words);
+            this.SetScrubbedPhrase(lowercaseAndScrubbed);
         }
 
         public string ScrubPunctuation(string phrase)
