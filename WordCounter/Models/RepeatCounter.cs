@@ -95,10 +95,10 @@ namespace WordCounter
         public int FindWordMatches()
         {
             this.ResetWordCount();
-            string [] phrase = this.GetScrubbedPhrase().Split(' ');
-            for (int i = 0; i < phrase.Length; i++)
+            string [] words = this.GetScrubbedPhrase().Split(' ');
+            for (int i = 0; i < words.Length; i++)
             {
-                if (this.GetUserWord() == phrase[i]) this.IncrementWordCount();
+                if (this.GetUserWord() == words[i]) this.IncrementWordCount();
             }
             return this.GetWordCount();
         }
