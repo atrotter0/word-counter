@@ -12,7 +12,7 @@ namespace WordCounter
 
         public void SetUserWord(string word)
         {
-            _userWord = word.ToLower();
+            _userWord = word.ToLower().Trim();
         }
 
         public string GetUserWord()
@@ -65,8 +65,6 @@ namespace WordCounter
             if (string.IsNullOrEmpty(word)) return true;
             return false;
         }
-
-        // trim whitespace around word
 
         public bool IsValidWord(string word)
         {

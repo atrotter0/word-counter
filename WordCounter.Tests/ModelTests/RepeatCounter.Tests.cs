@@ -12,7 +12,7 @@ namespace WordCounter.Tests
         public void GetSetUserWord_GetsSetsUserWord_String()
         {
             RepeatCounter newCounter = new RepeatCounter();
-            newCounter.SetUserWord("DOG");
+            newCounter.SetUserWord("  DOG  ");
             Assert.AreEqual("dog", newCounter.GetUserWord());
         }
 
