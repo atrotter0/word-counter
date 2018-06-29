@@ -15,9 +15,10 @@ A class that counts how many times a specific word appears in a string of words.
 | Program prompts user for a word. | Dog | Counting how many times 'dog' appears in a phrase. |
 | Program downcases user input. | Dog | dog |
 | Program only allows letters in words. | Dog@#$ | Please enter a valid word. Only letters are allowed. |
-| Program prompts user to enter a phrase and counts how many times the specified word is found within the phrase. | That was a giant dog we saw the other day! | dog appears {number} of times in the phrase: {phrase} |
-| Program downcases words in the phrase to find exact matches. | This is going to get CRAZY! | this is going to get crazy! |
+| Program prompts user for a phrase. | That was a giant dog we saw the other day! | Your phrase: That was a giant dog we saw the other day! |
+| Program downcases words in the phrase to find exact word matches. | This is going to get CRAZY! | this is going to get crazy! |
 | Program strips punctuation from each word in the phrase. | this is going to get crazy!!! | this is going to get crazy |
+| Program counts how many times the specified word is found within the inputted phrase. | That was a giant dog we saw the other day! | Word: dog, Found: 1 |
 
 ## Setup on OSX
 
