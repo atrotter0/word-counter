@@ -12,6 +12,7 @@ A class that counts how many times a specific word appears in a string of words.
 
 | Behavior | Input | Output | Reason |
 |----------|-------|--------|--------|
+| Program checks for null input from user. | null | true | Test to see if input is null from user, if it is, return true. I don't want other methods breaking if input is null. |
 | Program downcases user input. | "  Dog  " | dog | Included an uppercase letter in the word and spaces to make sure that the input is downcased and spaces are trimmed. |
 | Program checks for a valid word (only accepts letters in words). | %$DHOG&* | false | Included special characters in the word so that the method would return false, marking the word as invalid. |
 | Program downcases words in the phrase to find exact word matches. | This is the end, the END my friend. | This is the end, the end my friend. | In order to find an exact word match, I need to downcase all words to match user input. |
