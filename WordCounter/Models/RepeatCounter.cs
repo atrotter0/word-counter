@@ -6,6 +6,7 @@ namespace WordCounter
     public class RepeatCounter
     {
         private string _userWord;
+        private string _userPhrase;
 
         public void SetUserWord(string word)
         {
@@ -24,6 +25,16 @@ namespace WordCounter
                 if (!Char.IsLetter(letter)) return false;
             }
             return true;
+        }
+
+        public void SetUserPhrase(string phrase)
+        {
+            _userPhrase = phrase;
+        }
+
+        public string GetUserPhrase()
+        {
+            return _userPhrase;
         }
     }
 }

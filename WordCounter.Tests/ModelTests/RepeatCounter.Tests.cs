@@ -9,7 +9,7 @@ namespace WordCounter.Tests
     public class RepeatCounterTest
     {
         [TestMethod]
-        public void GetSetUserWord_GetsSetsUserWord_True()
+        public void GetSetUserWord_GetsSetsUserWord_String()
         {
             RepeatCounter newCounter = new RepeatCounter();
             newCounter.SetUserWord("DOG");
@@ -30,6 +30,15 @@ namespace WordCounter.Tests
             RepeatCounter newCounter = new RepeatCounter();
             string input = "cat";
             Assert.AreEqual(true, newCounter.IsValidWord(input));
+        }
+
+        [TestMethod]
+        public void GetSetUserPhrase_GetsSetsUserPhrase_String()
+        {
+            RepeatCounter newCounter = new RepeatCounter();
+            string phrase = "This is the end, the end my friend.";
+            newCounter.SetUserPhrase(phrase);
+            Assert.AreEqual(phrase, newCounter.GetUserPhrase());
         }
     }
 }
